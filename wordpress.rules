@@ -126,8 +126,11 @@ BasicRule wl:1000 "mz:$URL:/wp-admin/users.php|$ARGS_VAR:delete_count|NAME";
 BasicRule wl:1000 "mz:$URL:/wp-admin/users.php|$ARGS_VAR:update|NAME";
 
 ### Plugins
-#WP Minify
-BasicRule wl:1015 "mz:$URL:/wp-content/plugins/bwp-minify/min/|$ARGS_VAR:f";
+# Jetpack
+BasicRule wl:1002 "mz:$URL:/xmlrpc.php?for=jetpack|$BODY_VAR:code";
+BasicRule wl:1009 "mz:$URL:/xmlrpc.php?for=jetpack|$BODY_VAR:redirect_uri";
+#Jetpack Google Fonts
+BasicRule wl:1001 "mz:$URL_X:^/wp-content/plugins/jetpack/css/.*|URL";
 #Jetpack Infinite Scroll
 BasicRule wl:1310,1311 "mz:$BODY_VAR:scripts[]|NAME";
 BasicRule wl:1310,1311 "mz:$BODY_VAR:styles[]|NAME";
@@ -137,14 +140,14 @@ BasicRule wl:1000 "mz:$BODY_VAR:query_args[update_post_meta_cache]|NAME";
 #UpdraftPlus
 BasicRule wl:1000 "mz:$URL:/wp-content/plugins/updraftplus/includes/select2/select2.min.css|URL";
 BasicRule wl:1000 "mz:$URL:/wp-content/plugins/updraftplus/includes/select2/select2.min.js|URL";
-#WP plugin updates
-BasicRule wl:1315 "mz:$ARGS_VAR:query|$URL:/wp-json/jetpack/v4/jitm";
-#Jetpack Google Fonts
-BasicRule wl:1001 "mz:$URL_X:^/wp-content/plugins/jetpack/css/.*|URL";
 #WooCommerce
 BasicRule wl:1000 "mz:$URL:/wp-content/plugins/woocommerce/assets/js/select2/select2.full.min.js|URL";
 BasicRule wl:1000 "mz:$URL:/wp-content/plugins/woocommerce/assets/js/selectWoo/selectWoo.full.min.js|URL";
 BasicRule wl:1000 "mz:$URL:/wp-content/plugins/woocommerce/assets/js/stupidtable/stupidtable.min.js|URL";
+#WP Minify
+BasicRule wl:1015 "mz:$URL:/wp-content/plugins/bwp-minify/min/|$ARGS_VAR:f";
+#WP plugin updates
+BasicRule wl:1315 "mz:$ARGS_VAR:query|$URL:/wp-json/jetpack/v4/jitm";
 #WPML
 BasicRule wl:1000 "mz:$URL:/wp-content/plugins/sitepress-multilingual-cms/lib/select2/select2.min.js|URL";
 #Yoast SEO
